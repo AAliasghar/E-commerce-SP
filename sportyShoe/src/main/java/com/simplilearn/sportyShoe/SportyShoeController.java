@@ -72,11 +72,11 @@ List<Login> logins = new ArrayList<>();
         if (index==Constants.Not_Found) {
             logins.add(login);    
         }  else { // If not true
-           status = Constants.FAILED_STATUS;
+           status = Constants.FAILED_Login;
         }
         // Using flashattribute to get the date
         redirectAttributes.addFlashAttribute("status", status); 
-        return "redirect:/inventory";
+        return "redirect:/";
     }
 
 
@@ -98,16 +98,17 @@ List<Login> logins = new ArrayList<>();
 
  // Creating method to handle update botton password change
  @PostMapping("/update")
- public String handleUpdate(RedirectAttributes redirectAttributes){
-      /*int index = getIndexFromPassLogin(login.getPassword());
+ public String handleUpdate(Login login,RedirectAttributes redirectAttributes){
+      int index = getIndexFromPassLogin(login.getPassword());
         String status = Constants.SUCCESS_STATUS;
-        if (pass==Constants.Not_Found) {
+        if (index==Constants.Not_Found) {
             status = Constants.FAILED_STATUS;   
         }  else { // If not true
-           status = Constants.FAILED_STATUS;
-        } Login login, RedirectAttributes redirectAttributes
-        // Using flashattribute to get the date  */
-        redirectAttributes.addFlashAttribute("status", Constants.SUCCESS_PASS_CHANGE);
+
+           status = Constants.SUCCESS_PASS_CHANGE;
+        } 
+        // Using flashattribute to get the date  
+        redirectAttributes.addFlashAttribute("status", status);
      return "redirect:/";
  }
 

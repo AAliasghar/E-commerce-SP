@@ -7,6 +7,8 @@ public class Constants {
     public static final String SUCCESS_STATUS = "success";
     public static final String FAILED_STATUS = "failed";
     public static final String SUCCESS_PASS_CHANGE = "passChanged";
+    public static final String SUCCESS_Login = "LoginSuccess";
+    public static final String FAILED_Login = "LoginFailed";
 }
 
     

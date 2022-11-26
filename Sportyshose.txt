@@ -1,0 +1,17 @@
+***Project Structure***
+	-> NO signup page!!!
+	-> "Login Page"
+		-> User name 
+		-> Pass
+		-> Submit Button -> when click on Submit will be diredted to "Dashboard Page" -> "Change pass page" 
+																						
+																					  -> "Manage Product" -> Inventory Page
+																						-> Category Table -> Form Page
+																						-> Product Table  -> Inventory Page
+																					  -> "Manage Users" -> Users signed up already -> "Page which show in table"
+																					  -> "Purchase Report" -> Inventory Page
+																							-> "Page showing purchage report"
+																								-> Filter by date and Category
+																							-> Need a table for this "Orders Table" -> UserID, ProductID, Date
+GIT link
+	https://github.com/AAliasghar/E-commerce-SP.git
