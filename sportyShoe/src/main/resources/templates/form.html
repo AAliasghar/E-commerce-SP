@@ -1,0 +1,49 @@
+<html >
+<html>
+    <head> 
+        <link th:href="@{/form-stylesheet.css}" rel="stylesheet"> 
+    </head>    
+    <body>
+        <div class="topnav">
+            <a class="active" th:href="@{/}">Form</a>
+            <a th:href="@{/inventory}">Inventory</a>
+            <a th:href="@{/login}">Log Out</a>
+            <a th:href="@{/changepass}">Change password</a>
+            <td th:object="${login}">
+                <a role="button"  th:href="@{/(id = ${login.id})}">Change password</a>
+             </td>
+
+         
+        </div>
+        <div class="alert success" th:if="${status} == 'passChanged'">
+            <strong> Password successfully changed ! </strong> 
+        </div>
+
+        <div class="alert success" th:if="${status} == 'success'">
+            <strong> You successfully logged in! </strong> 
+        </div>
+        <div class="alert failed" th:if="${status} == 'failed'">
+         <strong> Your login detail stored! </strong> 
+     </div> 
+
+        <div class="container">    
+            <h2> Sporty Shoes </h2>
+            <form method="post" th:object="${item}" th:action="@{/submitItem}"  > <!-- all of data such as category, name,...will be sent to item as post request-->
+               
+                <select class="select" th:field="*{category}">
+                    <option style="color:blue" value="">Choose Category</option>
+                    <option th:each="category:${categories}" th:text="${category}" th:value="${category}"> </option>
+                  
+                </select>
+
+                <input type="text" placeholder="Name" th:field="*{name}">
+                <input class="half" type="text" placeholder="Price" th:field="*{price}">
+                <input class="half" type="text" placeholder="Discount" th:field="*{discount}">
+                <h4>Order Date</h4>
+                <input type="date" style="color:black" th:field="*{date}">
+                <input type="hidden"  th:field="*{id}"> <!--Posting ID so handler method can identify it-->
+                <input type="submit" value="Submit Item">
+            </form>
+        </div>      
+    </body>
+</html>

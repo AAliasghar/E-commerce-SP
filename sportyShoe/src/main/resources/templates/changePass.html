@@ -1,0 +1,24 @@
+<html >
+<html>
+    <head> 
+        <link th:href="@{/login-stylesheet.css}" rel="stylesheet"> 
+    </head>    
+    <body>
+        <div class="topnav">
+            <a class="active" th:href="@{/}">Form</a>
+            <a th:href="@{/inventory}">Inventory</a>
+            
+        </div>
+        <div class="container">    
+            <h2> Sporty Shoes </h2>
+            <form method="post" th:object="${login}" th:action="@{/update}"> <!-- all of data such as th:action="@{/update}",...will be sent to item as post request-->
+               
+                <input type="text" placeholder="Old Password" th:field="*{password}" >
+                <input type="text" placeholder="New Password" >
+                <input type="hidden"  th:field="*{id}"> <!--Posting ID so handler method can identify it-->
+                <input type="submit" value="Update">
+            </form>
+        </div>      
+    </body>
+</html>
+              

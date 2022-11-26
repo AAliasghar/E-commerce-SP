@@ -1,0 +1,21 @@
+<html >
+<html>
+    <head> 
+        <link th:href="@{/login-stylesheet.css}" rel="stylesheet"> 
+    </head>    
+    <body>
+        <div class="topnav">
+        </div>
+        <div class="container">    
+            <h2> Sporty Shoes </h2>
+           <form method="post" th:object="${login}" th:action="@{/signIn}"> <!-- all of data such as category, name,...will be sent to item as post request -->
+                
+                <input type="email" placeholder="userName" th:field="*{userName}" >
+                <input type="password" placeholder="password" th:field="*{password}">
+                 <input type="hidden"  th:field="*{id}"> <!--Posting ID so handler method can identify it -->
+                <input type="submit" value="Sign in">
+            </form> 
+           
+        </div>      
+    </body>
+</html>
